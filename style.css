@@ -1,0 +1,252 @@
+:root {
+    --primary: #5e4b3a;
+    --secondary: #d4b483;
+    --light: #f8f4e9;
+    --dark: #2a2a2a;
+    --accent: #a38f6a;
+    --text-light: #f8f8f8;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+}
+
+.progress-container {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.progress-bar {
+    height: 6px;
+    background-color: #e0e0e0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--secondary);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.screen {
+    display: none;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.welcome-content {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    position: relative;
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background: var(--secondary);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    color: var(--dark);
+}
+
+.question-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transform: scale(0.98);
+    transition: transform 0.3s ease;
+}
+
+.question-card:hover {
+    transform: scale(1);
+}
+
+.question-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.option-card {
+    background: var(--light);
+    padding: 1.5rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+    font-weight: 500;
+}
+
+.option-card:hover {
+    background: var(--secondary);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.option-card.selected {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.primary-btn {
+    background: var(--primary);
+    color: var(--text-light);
+    box-shadow: var(--shadow);
+}
+
+.primary-btn:hover {
+    background: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.next-btn {
+    background: var(--primary);
+    color: var(--text-light);
+}
+
+.back-btn {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.back-btn:hover {
+    background: var(--primary);
+    color: var(--text-light);
+}
+
+.result-card {
+    text-align: center;
+    padding: 2rem;
+}
+
+.result-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.result-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--dark);
+}
+
+.outfit-image-container {
+    margin: 2rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.outfit-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.outfit-image:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .question-card {
+        padding: 1.5rem;
+    }
+}

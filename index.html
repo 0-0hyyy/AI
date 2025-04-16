@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleAI - Outfit Recommendation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="progress-container">
+            <div class="progress-bar" id="progress"></div>
+        </div>
+
+        <!-- Welcome Screen -->
+        <div class="screen active" id="welcome-screen">
+            <div class="welcome-content">
+                <h1 class="title">StyleAI</h1>
+                <p class="subtitle">Discover your perfect outfit with our AI stylist</p>
+                <button class="btn primary-btn" id="start-btn">Get Started</button>
+            </div>
+        </div>
+
+        <!-- Question Screens -->
+        <div class="screen" id="gender-screen">
+            <div class="question-card">
+                <h2>1. What is your gender?</h2>
+                <div class="options-grid">
+                    <div class="option-card" data-value="male">Male</div>
+                    <div class="option-card" data-value="female">Female</div>
+                </div>
+                <button class="btn next-btn" id="gender-next" disabled>Next</button>
+            </div>
+        </div>
+
+        <div class="screen" id="skin-tone-screen">
+            <div class="question-card">
+                <h2>2. What is your skin tone?</h2>
+                <div class="options-grid">
+                    <div class="option-card" data-value="light">Fair</div>
+                    <div class="option-card" data-value="medium">Medium</div>
+                    <div class="option-card" data-value="dark">Dark</div>
+                </div>
+                <div class="button-group">
+                    <button class="btn back-btn" id="skin-tone-back">Back</button>
+                    <button class="btn next-btn" id="skin-tone-next" disabled>Next</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="screen" id="body-type-screen">
+            <div class="question-card">
+                <h2>3. What is your body type?</h2>
+                <div class="options-grid" id="body-type-options">
+                    <!-- Options will be populated by JavaScript -->
+                </div>
+                <div class="button-group">
+                    <button class="btn back-btn" id="body-type-back">Back</button>
+                    <button class="btn next-btn" id="body-type-next" disabled>Next</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="screen" id="outfit-type-screen">
+            <div class="question-card">
+                <h2>4. What type of outfit are you looking for?</h2>
+                <div class="options-grid">
+                    <div class="option-card" data-value="casual">Casual</div>
+                    <div class="option-card" data-value="formal">Formal</div>
+                </div>
+                <div class="button-group">
+                    <button class="btn back-btn" id="outfit-type-back">Back</button>
+                    <button class="btn next-btn" id="outfit-type-next" disabled>Find My Outfit</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div class="screen" id="result-screen">
+            <div class="result-card">
+                <h2 class="result-title">Your Perfect Outfit</h2>
+                <p class="result-subtitle">Based on your preferences, we recommend:</p>
+                <div class="outfit-image-container">
+                    <img src="" alt="Recommended Outfit" class="outfit-image" id="result-image">
+                </div>
+                <button class="btn primary-btn" id="restart-btn">Start Over</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
